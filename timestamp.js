@@ -27,7 +27,14 @@ const processTimeStamp = (req, res) => {
 
 // const timestampController = require('./controllers/timestampController');
 
-router.get('/:date_string?', processTimeStamp);
+router.get('/:date_string', processTimeStamp);
+router.get("/", (req, res) => {
+  // res.json({ unix: Date.now(), utc: Date() });
+    res.json({
+    unix: Date.now(),
+    utc: Date()
+  });
+});
 
 module.exports = router;
 
