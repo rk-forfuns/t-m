@@ -27,7 +27,7 @@ app.get("/api/timestamp/:date_string", (req, res) => {
     // Not date type
     const date = new Date(parseInt(date_string));
     if (!date.getTime()) {
-      return res.status(400).json({
+      return res.json({
         error: "Invalid Date"
       });
     } else {
@@ -36,7 +36,7 @@ app.get("/api/timestamp/:date_string", (req, res) => {
   } else {
     const date = new Date(date_string);
     if (!date.getTime()) {
-      return res.status(400).json({
+      return res.json({
         error: "Invalid Date"
       });
     } else {
